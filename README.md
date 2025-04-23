@@ -21,7 +21,7 @@ https://3a0bfe56-7258-4955-9f23-252bddaf0879.mock.pstmn.io
 
 **Sample Request:**
 ```
-GET {{baseUrl}}/v1/users/u12345
+GET {{baseUrl}}/v1/users/{{id}}
 ```
 
 **Response:**
