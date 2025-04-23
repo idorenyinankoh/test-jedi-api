@@ -6,7 +6,7 @@
 
 ### **Base URL**
 ```
-https://api.example.com/v1](https://3a0bfe56-7258-4955-9f23-252bddaf0879.mock.pstmn.io
+https://3a0bfe56-7258-4955-9f23-252bddaf0879.mock.pstmn.io
 ```
 
 ---
@@ -21,7 +21,7 @@ https://api.example.com/v1](https://3a0bfe56-7258-4955-9f23-252bddaf0879.mock.ps
 
 **Sample Request:**
 ```
-GET https://api.example.com/v1/users/u12345
+GET {{baseUrl}}/v1/users/u12345
 ```
 
 **Response:**
@@ -40,7 +40,7 @@ GET https://api.example.com/v1/users/u12345
 
 ### ✅ Create User  
 **Method:** `POST`  
-**Endpoint:** `/users`  
+**Endpoint:** `/v1/users`  
 
 **Request Payload:**
 ```json
@@ -68,7 +68,7 @@ GET https://api.example.com/v1/users/u12345
 
 ### ✏️ Update Entire User Info  
 **Method:** `PUT`  
-**Endpoint:** `/users/{id}`  
+**Endpoint:** `/v1/users/{id}`  
 
 **Request Payload:**
 ```json
@@ -96,7 +96,7 @@ GET https://api.example.com/v1/users/u12345
 
 ### 🛠️ Partially Update User Info  
 **Method:** `PATCH`  
-**Endpoint:** `/users/{id}`  
+**Endpoint:** `/v1/users/{id}`  
 
 **Request Payload:**
 ```json
@@ -121,7 +121,7 @@ GET https://api.example.com/v1/users/u12345
 
 ### ❌ Delete a User  
 **Method:** `DELETE`  
-**Endpoint:** `/users/{id}`  
+**Endpoint:** `/v1/users/{id}`  
 
 **Response:**
 ```json
