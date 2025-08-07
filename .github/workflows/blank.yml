@@ -1,14 +1,20 @@
-#development repository
-name: trigger tests in another repository..
-on: workflow_dispatch
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  repository_dispatch:
+    types: [my-event]
+
 jobs:
-  trigger-test:
+  call-project-b:
     runs-on: ubuntu-latest
     steps:
-      - name: trigger the automated test in another repo
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.GITTOKEN }}
-          repository: lenkie-code/test-automation
-          event-type: my-event
-          client-payload: '{"github": ${{ toJSON(github) }}}'
+      - name: Trigger Project B
+        run: |
+          curl -X POST https://api.github.com/repos/lenkie-code/test-automation/dispatches \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ secrets.GITTOKEN }}" \
+          -d '{"event_type":"run-tests"}'
