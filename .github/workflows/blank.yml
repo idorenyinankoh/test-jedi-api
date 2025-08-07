@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Trigger Project B
         run: |
-          curl -X POST https://api.github.com/repos/ankohlenkie/lenkie-code/test-automation/dispatches \
+          curl -X POST https://api.github.com/repos/lenkie-code/test-automation/dispatches \
           -H "Accept: application/vnd.github+json" \
           -H "Authorization: Bearer ${{ secrets.GITTOKEN }}" \
           -d '{"event_type":"run-tests"}'
