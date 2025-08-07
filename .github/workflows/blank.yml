@@ -5,30 +5,16 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  workflow_dispatch:
+  repository_dispatch:
+    types: [run-tests]
 
 jobs:
-  trigger-project-b:
+  call-project-b:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Project B workflow_dispatch
-        uses: peter-evans/workflow-dispatch@v1.3.0
-        with:
-          token: ${{ secrets.GITTOKEN }}
-          repository: lenkie-code/test-automation
-          workflow: accept-test-data.yml   # <-- This should match the workflow filename in Project B
-          ref: main                       # <-- Or the branch you want to run it on
-          inputs: |
-            test_email: "sampleuser@lenkie.com"
-            test_amount: "2500"
-
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
+      - name: Trigger Project B
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          curl -X POST https://api.github.com/repos/ankohlenkie/lenkie-code/test-automation/dispatches \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+          -d '{"event_type":"run-tests"}'
