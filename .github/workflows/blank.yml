@@ -16,5 +16,5 @@ jobs:
         run: |
           curl -X POST https://api.github.com/repos/ankohlenkie/lenkie-code/test-automation/dispatches \
           -H "Accept: application/vnd.github+json" \
-          -H "Authorization: Bearer ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+          -H "Authorization: Bearer ${{ secrets.GITTOKEN }}" \
           -d '{"event_type":"run-tests"}'
