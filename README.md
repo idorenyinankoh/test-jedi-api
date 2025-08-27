@@ -47,7 +47,7 @@ GET {{baseUrl}}/v1/users/{{id}}
 {
   "first_name": "Jane",
   "last_name": "Doe",
-  "email": "jane.doe@example.com",
+  "email": "idy.doe@example.com",
   "role": "admin"
 }
 ```
