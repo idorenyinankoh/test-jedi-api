@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "master" ]
   repository_dispatch:
-    types: [my-event]
+    types: [run-tests]
 
 jobs:
   call-project-b:
@@ -17,4 +17,4 @@ jobs:
           curl -X POST https://api.github.com/repos/lenkie-code/test-automation/dispatches \
           -H "Accept: application/vnd.github+json" \
           -H "Authorization: Bearer ${{ secrets.GITTOKEN }}" \
-          -d '{"event_type":"my-event"}'
+          -d '{"event_type":"run-tests"}'
