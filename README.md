@@ -1,4 +1,4 @@
-**API documentation** with full CRUD operations.
+**API documentation** with full CRUD operations
 
 ---
 
