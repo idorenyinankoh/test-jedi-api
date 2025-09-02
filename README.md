@@ -30,7 +30,7 @@ GET {{baseUrl}}/v1/users/{{id}}
   "id": "u12345",
   "first_name": "Jane",
   "last_name": "Doe",
-  "email": "jane.doe@example.com",
+  "email": "idy.doe@example.com",
   "role": "admin",
   "created_at": "2025-04-11T10:00:00Z"
 }
